@@ -20,9 +20,9 @@ public class OrganizationController : ControllerBase
     
     [HttpPost]
     [Route("member")]
-    public async Task<IActionResult> AddMember(int id)
+    public async Task<IActionResult> AddMember(int idMember, int idTeam)
     {
-        await _service.AddMember(id);
+        await _service.AddMember(idMember, idTeam);
         return Ok();
     }
 }
