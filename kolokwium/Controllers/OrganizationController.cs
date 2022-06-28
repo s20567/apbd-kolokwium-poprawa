@@ -1,4 +1,5 @@
-﻿using kolokwium.Services;
+﻿using kolokwium.Model.DTOs;
+using kolokwium.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace kolokwium.Controllers;
@@ -20,9 +21,9 @@ public class OrganizationController : ControllerBase
     
     [HttpPost]
     [Route("member")]
-    public async Task<IActionResult> AddMember(int idMember, int idTeam)
+    public async Task<IActionResult> AddMember(AddMemberDTO dto)
     {
-        await _service.AddMember(idMember, idTeam);
+        await _service.AddMember(dto.IdMember, dto.IdTeam);
         return Ok();
     }
 }
